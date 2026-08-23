@@ -5,7 +5,7 @@ status: atual
 projeto: gaabwiki
 dominio: knowledge-sources
 escopo: meta
-atualizado: 2026-08-23
+atualizado: 2026-08-23T14:00
 confianca: alta
 aliases:
   - Índice de fontes da GaabWiki
@@ -31,10 +31,12 @@ Uma página da wiki **não** é fonte primária de outra página da wiki. Fontes
 
 ## Fontes primárias (código)
 
+> **Nota:** paths abaixo apontam para repositórios de **código**. Para afirmações de implementação Kernel/Orbit, verificar branch antes de concluir — True Kernel e `kernelProvider` estão em `feature/kernel-orbit-v1-hardening`, **não** necessariamente em `main`.
+
 | Fonte | Path | Uso |
 |-------|------|-----|
-| KernelBot código | `/home/gaab/Documentos/gitHub/KernelBot/` | estado CURRENT do Kernel |
-| OrbitBot código | `/home/gaab/Documentos/gitHub/OrbitBot/` | estado CURRENT do canal |
+| KernelBot código | `/home/gaab/Documentos/gitHub/KernelBot/` | evidência Git do Kernel (conceito implementado no repo); branch-specific para `kernel/` |
+| OrbitBot código | `/home/gaab/Documentos/gitHub/OrbitBot/` | evidência Git do canal Orbit; branch-specific para `kernelProvider.js` |
 | ISS código | `/home/gaab/Documentos/gitHub/ISS/` | conteúdo / catálogo |
 | Portifolio código | `/home/gaab/Documentos/gitHub/Portifolio/` | produto visual |
 | Xray-Spec código | `/home/gaab/Documentos/gitHub/Xray-Spec/` | qualidade de specs |

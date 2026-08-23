@@ -5,7 +5,7 @@ status: atual
 projeto: gaabwiki
 dominio: project-definition
 escopo: meta
-atualizado: 2026-08-23
+atualizado: 2026-08-23T14:00
 confianca: alta
 aliases:
   - KernelBot
@@ -58,6 +58,8 @@ tags:
 
 ## Relação com OrbitBot
 
+**Classificação:** IMPLEMENTED / BRANCH-SPECIFIC — `feature/kernel-orbit-v1-hardening` (KernelBot + OrbitBot). **Não** assumir em `main`.
+
 ```text
 OrbitBot → POST /v1/chat → KernelBot
 KernelBot → BM25 + grounding + LLM → { answer }
@@ -66,11 +68,17 @@ KernelBot → (opcional) ORBIT_INTERNAL_URL → outbound WhatsApp
 
 OrbitBot não duplica RAG.
 
-## Temporalidade
+## Proveniência por branch (Git, 2026-08-23)
 
-- **CURRENT:** `kernel/`, `/v1/chat`, BM25, Ops/Traces.
-- **HISTORICAL:** pacote `engine/`/`core/` (vazio); frontend público; docs em `raw/docs-wiki/` que ainda citam `engine/`.
-- **EXPERIMENTAL / NÃO CONFIRMADO:** unificação Orbit→Kernel num só repo (planos em `memory/` do KernelBot); Discord activo.
+| Classificação | Branch | Artefactos verificados |
+|---------------|--------|------------------------|
+| **CURRENT-de-`main`** | `KernelBot/main` | `engine/` (~13 paths), `frontend/`, `core/`; **sem** `kernel/`, **sem** `/v1/chat`, **sem** `api/security.py`, **sem** `adapters/whatsapp/outbound.py` |
+| **IMPLEMENTED / BRANCH-SPECIFIC** | `feature/kernel-orbit-v1-hardening` | `kernel/`, `POST /v1/chat`, `api/security.py`, `adapters/whatsapp/outbound.py`, BM25, Ops/Traces; **sem** `engine/`, **sem** `frontend/` |
+| **HISTORICAL** | `raw/docs-wiki/`, README antigo | Cita `engine/` como domínio cognitivo legado |
+| **TARGET** | merge feature → `main` | **UNKNOWN** — não confirmado |
+| **UNKNOWN** | produção E2E WhatsApp+Kernel | **UNKNOWN** |
+
+Não usar "engine/core vazios" como descrição global — em `main`, `engine/` está **populado**; na feature, `engine/` está **ausente** (substituído por `kernel/`).
 
 ## Fontes
 

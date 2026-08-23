@@ -5,7 +5,7 @@ status: atual
 projeto: gaabwiki
 dominio: knowledge-map
 escopo: meta
-atualizado: 2026-08-23
+atualizado: 2026-08-23T14:00
 confianca: alta
 aliases:
   - Índice global da GaabWiki
@@ -75,7 +75,13 @@ Este é o índice principal da Wiki Carpaccio do repositório GaabWiki. Ele orga
 
 ## Relações canônicas (código, 2026-08-23)
 
+> **Proveniência:** IMPLEMENTED — `feature/kernel-orbit-v1-hardening` (KernelBot + OrbitBot).  
+> **NOT MERGED INTO MAIN** — merge feature → `main`: **UNKNOWN**.  
+> **PRODUCTION E2E:** **UNKNOWN** — integração HTTP no código da feature; operação conjunta WhatsApp+Kernel não confirmada.  
+> Em `main`, OrbitBot **não** tem `kernelProvider.js`; KernelBot **não** tem `kernel/` nem `/v1/chat`.
+
 ```text
+[IMPLEMENTED — feature/kernel-orbit-v1-hardening; NOT in main]
 WhatsApp → OrbitBot (Baileys, Node) → POST /v1/chat → KernelBot (FastAPI :8001)
 KernelBot → BM25 (MySQL) + grounding + LLM → JSON answer → OrbitBot → WhatsApp
 Kernel    → namespace `kernel/` + conceito; NÃO é repositório separado

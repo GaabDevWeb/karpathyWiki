@@ -64,7 +64,7 @@ A Wiki funciona como um sistema de conhecimento para agentes e humanos, evitando
 - [Projetos](.ai/wiki/gaabwiki-projects.md)
 - [Terminologia](.ai/wiki/gaabwiki-terminology.md)
 - [Auditoria global](.ai/wiki/gaabwiki-auditoria.md)
-- [Health da wiki](.ai/wiki/health.md)
+- [Health da wiki](.ai/wiki/gaabwiki-health.md)
 - [Known unknowns](.ai/wiki/known-unknowns.md)
 - [Schema](schema.md)
 - [Corpus](corpus.yaml)
@@ -79,9 +79,15 @@ Path real dos repos: `/home/gaab/Documentos/gitHub` (não `GitHub`). As pastas d
 
 ## Relações canônicas
 
+> **Proveniência:** IMPLEMENTED — `feature/kernel-orbit-v1-hardening` (KernelBot + OrbitBot).  
+> **NOT MERGED INTO MAIN** — merge feature → `main`: **UNKNOWN**.  
+> **PRODUCTION E2E:** **UNKNOWN** — integração HTTP existe no código da feature; operação conjunta não confirmada.  
+> Em `main`, OrbitBot **não** tem `kernelProvider.js`; KernelBot **não** tem `kernel/` nem `/v1/chat`.
+
 ```text
+[IMPLEMENTED — feature/kernel-orbit-v1-hardening; NOT in main]
 WhatsApp → OrbitBot (Baileys) → POST /v1/chat → KernelBot (FastAPI + BM25)
-Kernel = conceito + pasta kernel/ dentro do KernelBot (não é repo)
+Kernel = conceito + pasta kernel/ dentro do KernelBot (não é repo; só na feature branch)
 Orbit = conceito + package name "orbit" (não é repo)
 GaabWiki = memória documental (não é runtime)
 ```

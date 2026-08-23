@@ -1,11 +1,30 @@
 version: 1
 
+# Semântica de matching (sem pipeline de ingestão implementado — spec validável)
+matching:
+  engine: pathlib-glob
+  root: repository-root
+  semantics: |
+    Include: pathlib.Path.glob(pattern) a partir da raiz do repositório GaabWiki.
+    Suporta ** recursivo (Python 3.11+). Paths normalizados em POSIX (forward slashes).
+    Exclude: pathlib.PurePosixPath(path).match(pattern) — exclude tem precedência sobre include.
+    Consumidores futuros devem implementar esta semântica; fnmatch simples NÃO é válido para **.
+
 corpora:
   current:
     include:
-      - "**/wiki/**/*.md"
       - ".ai/wiki/**/*.md"
-      - "**/index.md"
+      - "KernelBot/wiki/**/*.md"
+      - "OrbitBot/wiki/**/*.md"
+      - "ISS/wiki/**/*.md"
+      - "Portifolio/wiki/**/*.md"
+      - "Xray-Spec/wiki/**/*.md"
+      - ".ai/index.md"
+      - "KernelBot/index.md"
+      - "OrbitBot/index.md"
+      - "ISS/index.md"
+      - "Portifolio/index.md"
+      - "Xray-Spec/index.md"
     description: "Conhecimento sintetizado e atual"
 
   sources:
@@ -34,6 +53,8 @@ exclude:
   - "**/*.cache"
   - "**/.DS_Store"
   - "Portifolio/.ai/wiki/**"
+  - "Portifolio/.ai/index.md"
+  - "Portifolio/.ai/**"
   - "KernelBot/raw/docs-wiki/**"
 
 invariants:
@@ -42,3 +63,4 @@ invariants:
   - "Raw é evidência, não conhecimento sintetizado"
   - "Histórico deve permanecer separado do corpus atual"
   - "Links e relações devem ser explícitos"
+  - "SUPERSEDED (Portifolio/.ai/) nunca entra no corpus current"

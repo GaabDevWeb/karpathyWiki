@@ -5,7 +5,7 @@ status: atual
 projeto: gaabwiki
 dominio: governance
 escopo: meta
-atualizado: 2026-08-23
+atualizado: 2026-08-23T14:00
 confianca: alta
 aliases:
   - Health check da wiki
@@ -49,7 +49,7 @@ tags:
 | `tipo: documento` | ✅ | substituído por `problema` em health/known-unknowns |
 | Wikis ISS/Portifolio/Xray vs HEAD | ⚠️ | não re-auditadas agora |
 | Repos satélites | ⚠️ | inventário só |
-| Duplicata Portifolio `wiki/` vs `.ai/wiki/` | ⚠️ | conhecida |
+| Duplicata Portifolio `wiki/` vs `.ai/wiki/` | ✅ | **Resolvido (M4):** canónico = `Portifolio/wiki/`; `Portifolio/.ai/wiki/` e `Portifolio/.ai/index.md` excluídos do corpus `current` em `corpus.yaml`; `.ai/index.md` marcado SUPERSEDED |
 | Contradições abertas | ⚠️ | ver [[known-unknowns]] |
 
 ## Status final

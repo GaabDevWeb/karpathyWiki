@@ -5,7 +5,7 @@ status: atual
 projeto: gaabwiki
 dominio: project-definition
 escopo: meta
-atualizado: 2026-08-23
+atualizado: 2026-08-23T14:00
 confianca: alta
 aliases:
   - OrbitBot
@@ -65,8 +65,12 @@ O `README.md` do repo ainda diz: assistente WhatsApp com **OpenRouter/DeepSeek**
 - `core/cache.js` e `core/retry.js` sem `require()` no runtime.
 - Produção conjunta com Kernel: **NÃO CONFIRMADA**.
 
-## Temporalidade
+## Proveniência por branch (Git, 2026-08-23)
 
-- **CURRENT:** KernelProvider, Baileys, grupos com `@orbit`.
-- **HISTORICAL:** Venom / WPPConnect; OpenRouter como cérebro; dashboard HTTP :3000 (removido).
-- **POC:** EchoRoute.
+| Classificação | Branch | Artefactos |
+|---------------|--------|------------|
+| **IMPLEMENTED / BRANCH-SPECIFIC** | `feature/kernel-orbit-v1-hardening` | `kernelProvider.js`, Baileys, `@orbit`, fluxo `openai.js` → `POST /v1/chat` |
+| **CURRENT-de-`main`** | `OrbitBot/main` | **Sem** `src/providers/kernelProvider.js`; OpenRouter legado |
+| **HISTORICAL** | ramos antigos | Venom / WPPConnect; OpenRouter como cérebro; dashboard HTTP :3000 |
+| **POC** | EchoRoute | experimental |
+| **UNKNOWN** | merge / produção | **UNKNOWN** |

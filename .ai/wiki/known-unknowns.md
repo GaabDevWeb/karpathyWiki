@@ -5,7 +5,7 @@ status: atual
 projeto: gaabwiki
 dominio: governance
 escopo: meta
-atualizado: 2026-08-23
+atualizado: 2026-08-23T15:00
 confianca: media
 aliases:
   - Lacunas conhecidas
@@ -28,15 +28,18 @@ tags:
 
 Lacunas após auditorias V1 (2026-08-23). Visíveis por desenho — não são "aceitáveis por omissão".
 
-## Resolvido na remediação adversarial (2026-08-23)
+## Remediação freeze gate (2026-08-23)
+
+Blockers H-01–H-09 e M-01/M-02/M-04 endereçados no commit `docs(wiki): finalize V1 provenance and corpus`. **Validação final depende de re-gate externo read-only** — esta página não constitui prova de aprovação.
 
 | Tema | Estado |
 |------|--------|
-| H1–H5 gate adversarial | **Corrigido** — branch provenance, Kernel≠KernelBot, paths, ecosystem, orbitbot-kernel |
-| M1 links `rag.md` | **Corrigido** → `kernelbot-rag.md` |
-| M2 `orbitbot-branches` | **Corrigido** — paridade com `kernelbot-branches` |
-| M3 stems satélites | **Corrigido** — prefixos `iss-`, `portifolio-`, `xray-spec-` |
-| M4 Portifolio duplicado | **Corrigido** — canónico `Portifolio/wiki/`; `.ai/wiki/` excluído do corpus current |
+| H1–H5 branch provenance (meta-pages) | Remediação incorporada; aguarda re-gate |
+| M1 links `health.md` | Remediação incorporada → `gaabwiki-health.md` |
+| M2/M4 Portifolio corpus | Remediação incorporada — canónico `Portifolio/wiki/`; `.ai/` excluído |
+| H8 corpus.yaml matching | Remediação incorporada — semântica `pathlib-glob` documentada |
+
+Itens M2/M3 anteriores (orbitbot-branches paridade, stems satélites) permanecem válidos desde remediações anteriores.
 
 ## Ainda não confirmado
 
@@ -61,7 +64,7 @@ Lacunas após auditorias V1 (2026-08-23). Visíveis por desenho — não são "a
 - Status: NÃO CONFIRMADO
 
 ### 7. Freeze V1
-- Status: **PENDENTE** — aguarda novo gate externo pós-remediação de blockers.
+- Status: **PENDENTE** — aguarda Final Freeze Gate externo pós-remediação de blockers.
 
 ## Conflitos documentados (código vence)
 

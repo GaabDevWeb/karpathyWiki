@@ -5,7 +5,7 @@ status: atual
 projeto: gaabwiki
 dominio: project-state
 escopo: meta
-atualizado: 2026-08-23
+atualizado: 2026-08-23T14:00
 confianca: alta
 aliases:
   - Estado atual da GaabWiki
@@ -51,6 +51,6 @@ tags:
 ## Limitações
 
 - Sub-wikis ISS / Portifolio / Xray-Spec não foram re-auditadas contra HEAD nesta passagem.
-- Portifolio tem wiki duplicada (`wiki/` e `.ai/wiki/`).
+- **Portifolio (M4 resolvido):** fonte canónica CURRENT = `Portifolio/wiki/` (`portifolio-*.md`). Cópia histórica `Portifolio/.ai/wiki/` e índice `Portifolio/.ai/index.md` estão **SUPERSEDED** e **excluídos** do corpus `current` (`corpus.yaml`). Ficheiros físicos preservados para histórico; future RAG com `corpus=current` **não** deve ingeri-los.
 - Dezenas de repos locais só inventariados.
 - Frontmatter canónico incompleto nas sub-wikis (muitas páginas sem `id`).

@@ -1,6 +1,6 @@
 # Índice da Wiki — Portifolio / ASCII Engine
 
-> **SUPERSEDED / AUXILIARY:** Esta cópia em `Portifolio/.ai/` é **histórica**. Fonte canónica CURRENT: [Portifolio/index.md](../index.md) e `Portifolio/wiki/portifolio-*.md`. Excluída do corpus `current` em `corpus.yaml`.
+> **SUPERSEDED / AUXILIARY:** Esta cópia em `Portifolio/.ai/` é **histórica**. Fonte canónica CURRENT: [Portifolio/index.md](../index.md) e `Portifolio/wiki/portifolio-*.md`. **Excluída** do corpus `current` em `corpus.yaml` (`Portifolio/.ai/wiki/**` e `Portifolio/.ai/index.md`). Future RAG com `corpus=current` **não** deve ingerir este ficheiro.
 
 ## Visão geral
 

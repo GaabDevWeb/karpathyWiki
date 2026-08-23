@@ -5,7 +5,7 @@ status: atual
 projeto: gaabwiki
 dominio: terminology
 escopo: meta
-atualizado: 2026-08-23
+atualizado: 2026-08-23T14:00
 confianca: alta
 aliases:
   - Terminologia da GaabWiki
@@ -32,13 +32,17 @@ Regra: um nome de conceito **não** implica um repositório, um runtime ou uma f
 
 ### Kernel
 
-**Conceito** da camada cognitiva (contexto, retrieval, grounding, LLM).  
-**Implementação CURRENT:** pacote `kernel/` dentro do repo KernelBot.  
+**Conceito** da camada cognitiva (contexto, retrieval, grounding, LLM). **Kernel ≠ KernelBot.**  
 **Não é** um repositório separado. Docs por vezes dizem "Kernel (ex-KernelBot)" — tratar como branding, não como split de repo.
+
+| Classificação | Repo | Branch | Implementação |
+|---------------|------|--------|---------------|
+| **IMPLEMENTED / BRANCH-SPECIFIC** | KernelBot | `feature/kernel-orbit-v1-hardening` | Pacote `kernel/`, `/v1/chat`, BM25 |
+| **CURRENT-de-`main`** | KernelBot | `main` | `engine/` + `frontend/`; **sem** `kernel/` |
 
 ### KernelBot
 
-**Projecto** concreto: API HTTP FastAPI em `/home/gaab/Documentos/gitHub/KernelBot`. README actual intitula o produto **"Kernel API"**. Repo continua a chamar-se KernelBot.
+**Projecto/repositório** que **implementa** o Kernel (conceito). API HTTP FastAPI em `/home/gaab/Documentos/gitHub/KernelBot`. README actual intitula o produto **"Kernel API"** — branding do produto, não prova de que Kernel = KernelBot como entidades.
 
 ### Orbit
 
@@ -69,9 +73,9 @@ Família de mecanismos distintos — ver [[gaabwiki-memory]]. Nunca usar "memory
 
 ### RAG
 
-No KernelBot: BM25 léxico implementado.  
-Na GaabWiki: só preparação documental.  
-No OrbitBot: ausente (delega).
+No KernelBot: BM25 léxico **IMPLEMENTED / BRANCH-SPECIFIC** (`feature/kernel-orbit-v1-hardening`); em `main` legado sob `engine/`.  
+Na GaabWiki: só preparação documental (corpus/schema).  
+No OrbitBot: ausente (delega ao Kernel na feature branch).
 
 ### Security
 
