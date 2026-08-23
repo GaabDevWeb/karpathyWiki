@@ -1,0 +1,42 @@
+version: 1
+
+corpora:
+  current:
+    include:
+      - "**/wiki/**/*.md"
+      - ".ai/wiki/**/*.md"
+      - "**/index.md"
+    description: "Conhecimento sintetizado e atual"
+
+  sources:
+    include:
+      - "**/raw/**/*.md"
+      - "**/raw/**/*.txt"
+      - "README.md"
+      - "**/CLAUDE.md"
+    description: "Fontes primárias e evidências preservadas"
+
+  history:
+    include:
+      - "**/archive/**/*.md"
+      - "**/log.md"
+    description: "Histórico e registros de mudança"
+
+exclude:
+  - "**/.obsidian/**"
+  - "**/.git/**"
+  - "**/.github/**"
+  - "**/node_modules/**"
+  - "**/__pycache__/**"
+  - "**/*.tmp"
+  - "**/*.bak"
+  - "**/*.log"
+  - "**/*.cache"
+  - "**/.DS_Store"
+
+invariants:
+  - "Cada página importante deve possuir id único"
+  - "Ferramentas de sindicação de RAG não devem ser implementadas neste corpus"
+  - "Raw é evidência, não conhecimento sintetizado"
+  - "Histórico deve permanecer separado do corpus atual"
+  - "Links e relações devem ser explícitos"

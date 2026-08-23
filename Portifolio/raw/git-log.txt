@@ -1,0 +1,57 @@
+*   6e16380 (refs/stash) On projectsSecion: wip: add ascii script
+|\  
+| * f3e01b0 index on projectsSecion: bee3bc0 Remove obsolete files and update project details
+|/  
+| * 91f96f3 (HEAD -> ascii-engine-platform, portifolio/ascii-engine-platform) feat(ascii-engine): ship converter-first v1.0 product shell
+| * e2fdd39 feat(ascii-engine): refocus product on media conversion and introduce icon library
+| * ab7f8d3 feat(ascii-engine): integrate temporal pipeline for enhanced animation processing
+| * b55826d feat(ascii-engine): enhance conversion quality and add benchmarks
+| * 3d9e909 docs(ascii-engine): scene W8 module docs and architectural audit
+| * ed2d3c2 feat(ascii-engine): scene edit workspace tools layers (W2-W4)
+| * 07980bf feat(ascii-engine): scene shapes libraries clipboard export (Scene W5-W7)
+| * 46df4f9 feat(ascii-engine): scene document + compositor (Scene W0-W1)
+| * 707207b docs(ascii-engine): standalone W6 module docs and audit
+| * ffb9827 feat(ascii-engine): gallery with mock repository (W4)
+| * 16e93e1 feat(ascii-engine): converters/export/import expansion (W3)
+| * 18ecd0b feat(ascii-engine): editor/playground/analytics expansion (W5)
+| * c3108f3 feat(ascii-engine): presets/recipes v2 + color export (W2)
+| * 9c2effd feat(ascii-engine): never-crop preview with intrinsic canvas (W1)
+| * 306482d chore: record standalone W0 in agent history
+| * 1ea6cae chore: mark MegaBrain Platform cycle complete in agent history
+| * e2ee614 chore: record Platform P12 completion in agent history
+| * 74682a9 docs(ascii-engine): Platform P12 hardening report and checklist
+| * 7c55821 feat(ascii-engine): minimal node editor UI in Studio (P7)
+| * d1ce4dc feat(ascii-engine): AI provider stubs + heatmap stats (P11)
+| * 6be9c4a feat(ascii-engine): CLI convert/info/benchmark (P10)
+| * 9987953 feat(ascii-engine): headless NodeGraphRunner + built-in nodes (P6)
+| * 342b789 feat(ascii-engine): PluginHost + charset pack example (P9)
+| * a582d1d feat(ascii-engine): SVG converter + batch stub (P8)
+| * 3025c32 feat(ascii-engine): timeline keyframes, interpolation, onion skin (P4)
+| * 338bcd4 feat(ascii-engine): playground fire/wind/particles/explosion/water/noise effects (P5)
+| * 3d1634e perf(ascii-engine): image worker, patchSource, GIF worker pool (P3)
+| * 0f4668e feat(ascii-engine): editor brush/eraser/fill + command history (P2)
+| * a3b2a88 feat(ascii-engine): ProjectDocument, IDB store, project ZIP (P1)
+| * beebda7 docs(ascii-engine): Platform SSOT + implementation prompt (P0)
+| * 2b2a8f2 (portifolio/ascii-engine-next, ascii-engine-next) feat(ascii-engine): product facade, studio shell, SDK/CLI ready
+| * d24c4ee feat(ascii): ASCII Engine V2.1 lab + pipelines
+|/  
+* bee3bc0 (portifolio/projectsSecion, projectsSecion) Remove obsolete files and update project details
+* cb525a8 AsciiEngine
+| * 61a6cda (portifolio/ascii-lab-main, ascii-lab/main, ascii-lab-main) docs: apresentar a ASCII Lab e seu resultado visual
+| * 52148d7 feat: ASCII Lab — engine modular de conversão ASCII
+| * 8cc6e27 (portifolio/refactor, refactor) Update README and terminal commands for workspace mode
+|/  
+* b8e2bb0 Changes
+* 771a643 (portifolio/main, portifolio/asciiEngine, main, asciiEngine) Add AsciiInteractionEngine and related architecture documentation
+*   71a8c59 Merge pull request #2 from GaabDevWeb/cursor/fix-project-validation-9367
+|\  
+| * 0888a9f fix: compatibilidade Windows com Turbopack e react-is
+| * c577550 fix: validação do projeto e correção de cache .next corrompido
+|/  
+*   4966c76 Merge pull request
+|\  
+| * 6b357b0 (portifolio/penpen, penpen) Enhance window management and pointer tracking functionality
+| * dc829b3 (portifolio/feature, feature) Update dependencies and refactor landing page components
+| * 7770386 Add Lenis for smooth scrolling and enhance landing page structure
+|/  
+* 899c286 Firt commit

@@ -1,0 +1,10 @@
+* feature/kernel-orbit-v1-hardening
+  main
+  remotes/origin/Buffer
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/feature/kernel-orbit-v1-hardening
+  remotes/origin/feature/orbit-kernel-provider
+  remotes/origin/feature/orbit-kernel-tracing
+  remotes/origin/main
+  remotes/origin/refactor/test-trigger-mode
+  remotes/origin/refactor/wppconnect-to-baileys

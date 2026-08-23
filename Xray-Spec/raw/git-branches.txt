@@ -1,0 +1,22 @@
+# Fonte: Git branches e histórico
+
+## git branch -a
+
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+## git status --short --branch
+
+## main...origin/main
+
+## git log --all --oneline --decorate --graph --max-count=40
+
+* 7540256 (HEAD -> main, origin/main, origin/HEAD) Enhance LLM provider support in configuration and API integration. Update .env.example and README.md to reflect new providers and API keys. Refactor backend settings and error handling for improved clarity and robustness. Remove deprecated Gemini and OpenRouter service files. Update styles.css for improved scrollbar aesthetics and usability.
+* 9f94644 Refactor telemetry display in index.html and styles.css for improved clarity and responsiveness. Update JavaScript logic in app.js and renderer.js to align with new UI structure, enhancing user interaction with findings and health status indicators.
+* f370812 Revise help section in index.html for clarity and update styles in styles.css to enhance UI. Introduce new classes for help titles and improve content description for better user understanding.
+* ca9f7d0 Enhance environment configuration, update .gitignore for better file management, and improve frontend UI with new meta tags and streamlined components. Refactor API health check to provide clearer status feedback.
+* 5bd67fd Remove obsolete files including .agent_history.md, .vscode/settings.json, and various Python bytecode cache files from the backend application.
+* 872b465 Update frontend UI components and styles for improved usability and clarity; refactor backend cache files.
+* 7caaf2c Update README.md to provide detailed project description, architecture, prerequisites, configuration, execution instructions, API usage, troubleshooting, and project scope for Xray — Análise de Especificações.
+* 5d68bc8 Initial commit
