@@ -33,7 +33,7 @@ Lacunas após auditorias V1 (2026-08-23). Visíveis por desenho — não são "a
 | Tema | Estado |
 |------|--------|
 | Branch provenance `main` vs `feature/kernel-orbit-v1-hardening` | **Documentado** em [[kernelbot-branches]]; `main` ≠ True Kernel |
-| Colisões wikilinks `[[kernel]]`/`[[rag]]`/`[[memory]]` | **Corrigido** — convenção `{escopo}-{conceito}` em [schema.md](../../schema.md) §12 |
+| Colisões wikilinks ``[[kernel]]``/``[[rag]]``/``[[memory]]`` | **Corrigido** — convenção ``{escopo}-{conceito}`` em [schema.md](../../schema.md) §12 |
 | GaabWiki sem Git próprio | **Corrigido** — repositório Git local inicializado nesta remediação |
 | Declaração factual "Freeze V1 aceite" na wiki | **Removida** — freeze só via gate externo |
 

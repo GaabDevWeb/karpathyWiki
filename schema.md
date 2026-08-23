@@ -248,9 +248,9 @@ O campo `id` no frontmatter **deve coincidir** com o stem do ficheiro (sem `.md`
 
 ### Proibido
 
-- `[[gaabwiki-kernel]]`, `[[gaabwiki-rag]]`, `[[gaabwiki-memory]]` num vault multi-projecto — ambíguos.
-- Referenciar entidade de outro escopo sem prefixo.
+- Stems genéricos repetidos no vault — ex.: ficheiros `kernel.md`, `rag.md`, `memory.md` em pastas diferentes.
+- Referenciar entidade de outro escopo sem prefixo (meta → `gaabwiki-*`; KernelBot → `kernelbot-*`).
 
 ### Excepção estreita
 
-Páginas únicas no vault (ex.: `[[known-unknowns]]`, `[[gaabwiki-index]]`) podem usar stem global se não existir homónimo noutra pasta.
+Páginas únicas no vault (ex.: `[[known-unknowns]]`, `[[index]]` em `.ai/index.md`) podem usar stem global se não existir homónimo noutra pasta.

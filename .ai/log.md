@@ -32,4 +32,4 @@ Segunda reconciliação contra código (worker executor). Corrigido o que a pass
 - Fontes: source-index deixa de ser circular
 - CLAUDE.md/README: paths do schema corrigidos
 
-Veredito mantido: READY FOR V1 FREEZE com ressalvas em [[known-unknowns]]. Código dos projectos **não** foi alterado.
+**Evento histórico (pré-gate):** passagem anterior registou veredito preliminar de freeze — **substituído** pelo gate independente (READY WITH BLOCKERS). Código dos projectos **não** foi alterado.

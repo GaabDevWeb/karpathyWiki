@@ -44,7 +44,8 @@ tags:
 | Ops UI Kernel documentada | ✅ | |
 | Bug `bootstrap_catalog_state` visível | ✅ | |
 | IDs meta-wiki | ✅ | |
-| Frontmatter sub-wikis (`id`) | ⚠️ | incompleto |
+| Frontmatter sub-wikis (`id`) | ✅ | KernelBot/OrbitBot prefixados pós-blocker B2 |
+| Wikilinks kernel/rag/memory | ✅ | stems genéricos eliminados (meta + KB + Orbit) |
 | `tipo: documento` | ✅ | substituído por `problema` em health/known-unknowns |
 | Wikis ISS/Portifolio/Xray vs HEAD | ⚠️ | não re-auditadas agora |
 | Repos satélites | ⚠️ | inventário só |
