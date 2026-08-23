@@ -1,4 +1,5 @@
 ---
+id: xray-spec-decisions
 tipo: decisao
 status: atual
 atualizado: 2026-08-23

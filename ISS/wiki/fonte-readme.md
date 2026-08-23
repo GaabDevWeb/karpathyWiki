@@ -14,12 +14,12 @@ Snapshot de 2026-08-22 do README do repositório ISS.
 - Identidade: ISS — Infet Students Summary; site GitHub Pages
 - Ecossistema em 3 etapas: StripperScrapper → Actions VTT→content → Pages
 - Detalhe operacional: secrets, cron, Discord, scripts, configs
-- Link para `WIKI.md` (inexistente — ver [[known-issues]])
+- Link para `WIKI.md` (inexistente — ver [[iss-known-issues]])
 - Link para `documentation.md`
 
 ## Páginas derivadas
 
-- [[current-state]]
-- [[architecture]]
-- [[integrations]]
-- [[decisions]]
+- [[iss-current-state]]
+- [[iss-architecture]]
+- [[iss-integrations]]
+- [[iss-decisions]]

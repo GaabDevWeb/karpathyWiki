@@ -1,4 +1,5 @@
 ---
+id: xray-spec-conventions
 tipo: convencao
 status: atual
 atualizado: 2026-08-23

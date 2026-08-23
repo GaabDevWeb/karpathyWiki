@@ -1,4 +1,5 @@
 ---
+id: iss-conventions
 tipo: convencao
 status: atual
 atualizado: 2026-08-22
@@ -6,8 +7,8 @@ fonte:
   - "[[fonte-documentation]]"
   - "[[fonte-readme]]"
 relacionado:
-  - "[[domain]]"
-  - "[[architecture]]"
+  - "[[iss-domain]]"
+  - "[[iss-architecture]]"
 ---
 
 # Convenções
@@ -46,7 +47,7 @@ Padrões **observados** neste repositório (não “boas práticas” genéricas
 ## Prompts de agente
 
 - Contrato pedagógico: `agents/content-summary-agent.md` + `content-summary-style-guide.md`
-- Orquestração agentic documentada em `agents/orquestrer.md` (pode divergir do pipeline GHA — ver [[known-issues]])
+- Orquestração agentic documentada em `agents/orquestrer.md` (pode divergir do pipeline GHA — ver [[iss-known-issues]])
 - Cópia espelhada parcial: `agents/documentation.md` ≈ documentação do site (sem secção pipeline na cópia analisada)
 
 ## Contribuição

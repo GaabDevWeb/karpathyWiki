@@ -1,4 +1,5 @@
 ---
+id: xray-spec-domain
 tipo: dominio
 status: atual
 atualizado: 2026-08-23

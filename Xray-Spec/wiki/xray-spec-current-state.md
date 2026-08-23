@@ -1,4 +1,5 @@
 ---
+id: xray-spec-current-state
 tipo: estado
 status: atual
 atualizado: 2026-08-23

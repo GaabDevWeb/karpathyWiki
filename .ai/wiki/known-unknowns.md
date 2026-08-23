@@ -28,14 +28,15 @@ tags:
 
 Lacunas após auditorias V1 (2026-08-23). Visíveis por desenho — não são "aceitáveis por omissão".
 
-## Resolvido na remediação de blockers (2026-08-23)
+## Resolvido na remediação adversarial (2026-08-23)
 
 | Tema | Estado |
 |------|--------|
-| Branch provenance `main` vs `feature/kernel-orbit-v1-hardening` | **Documentado** em [[kernelbot-branches]]; `main` ≠ True Kernel |
-| Colisões wikilinks ``[[kernel]]``/``[[rag]]``/``[[memory]]`` | **Corrigido** — convenção ``{escopo}-{conceito}`` em [schema.md](../../schema.md) §12 |
-| GaabWiki sem Git próprio | **Corrigido** — repositório Git local inicializado nesta remediação |
-| Declaração factual "Freeze V1 aceite" na wiki | **Removida** — freeze só via gate externo |
+| H1–H5 gate adversarial | **Corrigido** — branch provenance, Kernel≠KernelBot, paths, ecosystem, orbitbot-kernel |
+| M1 links `rag.md` | **Corrigido** → `kernelbot-rag.md` |
+| M2 `orbitbot-branches` | **Corrigido** — paridade com `kernelbot-branches` |
+| M3 stems satélites | **Corrigido** — prefixos `iss-`, `portifolio-`, `xray-spec-` |
+| M4 Portifolio duplicado | **Corrigido** — canónico `Portifolio/wiki/`; `.ai/wiki/` excluído do corpus current |
 
 ## Ainda não confirmado
 
@@ -74,4 +75,4 @@ Lacunas após auditorias V1 (2026-08-23). Visíveis por desenho — não são "a
 ## Por desenho V1
 
 - Retrieval técnico sobre a GaabWiki: não implementado.
-- Wikilinks em ISS/Portifolio/Xray podem ainda usar stems locais não prefixados — **PARTIAL** na remediação global.
+- Stems satélites: prefixados (`iss-*`, `portifolio-*`, `xray-spec-*`).

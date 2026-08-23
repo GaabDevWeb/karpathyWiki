@@ -17,7 +17,7 @@ Análise de produto/UX/arquitectura com recomendações. Usa o nome “Interacti
 
 - Diagnóstico da LXP estática
 - Limitações históricas (conceitos, layout home, state disperso na altura, etc.)
-- Ideias de melhoria → [[roadmap]] (como ideias antigas, não backlog confirmado)
+- Ideias de melhoria → [[iss-roadmap]] (como ideias antigas, não backlog confirmado)
 
 ## Cuidado
 

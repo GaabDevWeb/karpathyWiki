@@ -1,11 +1,12 @@
 ---
+id: iss-branches
 tipo: branch
 status: atual
 atualizado: 2026-08-22
 relacionado:
-  - "[[history]]"
-  - "[[decisions]]"
-  - "[[integrations]]"
+  - "[[iss-history]]"
+  - "[[iss-decisions]]"
+  - "[[iss-integrations]]"
 ---
 
 # Branches
@@ -47,7 +48,7 @@ Locais: `main`, `features`. Remotas: as acima + `origin/HEAD → origin/main`.
 - `.github/scripts/ingest-knowledge.py`, `validate-catalog.mjs`, `reload-kernelbot.mjs`, `verify-kernelbot-sync.mjs`, `ops-notify.sh`
 - `agent.md`, `.agent_history.md`, `Documentation.md` (com secção Fase 5b)
 
-**Estado:** divergente; **não** está na árvore de workflows de `main`. Relatórios JSON semelhantes existem em `main` (adicionados em `83e1c8b`) **sem** o workflow — possível leftover / cópia parcial; tratar como inconsistência ([[known-issues]]).
+**Estado:** divergente; **não** está na árvore de workflows de `main`. Relatórios JSON semelhantes existem em `main` (adicionados em `83e1c8b`) **sem** o workflow — possível leftover / cópia parcial; tratar como inconsistência ([[iss-known-issues]]).
 
 ## Branches `origin/cursor/pipeline-iss-conte-do-*`
 

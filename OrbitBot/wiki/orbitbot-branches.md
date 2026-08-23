@@ -1,40 +1,86 @@
 ---
 id: orbitbot-branches
-tipo: historia
+tipo: historico
 status: atual
+projeto: orbitbot
+dominio: git
+escopo: projeto
 atualizado: 2026-08-23
+confianca: alta
+fontes:
+  - /home/gaab/Documentos/gitHub/OrbitBot
+relacionados:
+  - orbitbot-current-state
+  - orbitbot-architecture
+  - orbitbot-kernel
+  - kernelbot-branches
+tags:
+  - branches
+  - provenance
 ---
 
-# Branches e ramos relevantes
+# Branches relevantes do OrbitBot
 
-## OrbitBot
+> Repositório: `/home/gaab/Documentos/gitHub/OrbitBot`  
+> Evidência Git: 2026-08-23
 
-A branch principal atual do repositório é `feature/kernel-orbit-v1-hardening`.
+## Classificações
 
-Branches observadas em `git branch -a`:
-- `feature/kernel-orbit-v1-hardening`
-- `main`
-- `feature/orbit-kernel-provider`
-- `feature/orbit-kernel-tracing`
-- `refactor/test-trigger-mode`
-- `refactor/wppconnect-to-baileys`
+| Tag | Significado |
+|-----|-------------|
+| **CURRENT (workspace)** | Checkout local verificado |
+| **IMPLEMENTED** | Ficheiro/comportamento confirmado no código |
+| **BRANCH-SPECIFIC** | Não assumir em `main` |
+| **HISTORICAL** | Legado em `main` |
+| **TARGET / UNKNOWN** | Merge ou produção não confirmados |
 
-## KernelBot
+---
 
-O KernelBot também possui `feature/kernel-orbit-v1-hardening` e várias branches de arquitetura e deploy, incluindo:
-- `feature/kernel-orbit-integration`
-- `feature/kernel-ops-center`
-- `security-audit`
-- `security-hardening`
-- `mysql-refactor`
-- `feat/cursor-provider`
-- `feat/continuous-generation`
+## O que existe em `OrbitBot/main`?
 
-## Interpretação
+**Classificação:** CURRENT-de-`main` / HISTORICAL relativamente ao contrato Kernel.
 
-A sobreposição explícita de nomes de branches entre os projetos fornece evidência forte de que os dois repositórios evoluíram em paralelo e em integração. Esse padrão é maior do que uma coincidência de nomenclatura.
+| Artefacto | Em `main`? | Evidência |
+|-----------|------------|-----------|
+| `src/providers/kernelProvider.js` | **Não** | `git cat-file -e main:src/providers/kernelProvider.js` → ausente |
+| Integração `POST /v1/chat` | **Não** | Fluxo OpenRouter/WPPConnect legado |
+| Baileys (versão feature) | Parcial | `main` pode divergir; não re-auditado linha-a-linha aqui |
 
-## Status
+`main` = bot WhatsApp **sem** delegação ao KernelBot via `kernelProvider`.
 
-- Fato: há nítida correspondência entre branches de integração.
-- Inferência: estes repositórios fazem parte de um mesmo esforço de arquitetura em camadas, com desenvolvimento paralelo e sincronizado.
+---
+
+## O que existe em `feature/kernel-orbit-v1-hardening`?
+
+**Classificação:** CURRENT (workspace) / IMPLEMENTED / BRANCH-SPECIFIC.
+
+| Artefacto | Na feature? | Evidência |
+|-----------|-------------|-----------|
+| `src/providers/kernelProvider.js` | **Sim** | Presente no HEAD |
+| `src/openai.js` → `kernelProvider.chat()` | **Sim** | Fluxo principal de geração |
+| Baileys 6.7.18 | **Sim** | `package.json` |
+| HTTP interno `:8010` | **Sim** | `src/outbound/internalHttp.js` |
+| OpenRouter no fluxo principal | **Não** | Código morto/legado no ficheiro; Kernel é autoritativo |
+
+---
+
+## Mapa de branches (observadas)
+
+| Branch | Classificação | Nota |
+|--------|---------------|------|
+| `feature/kernel-orbit-v1-hardening` | **CURRENT (workspace)** / BRANCH-SPECIFIC | Par com KernelBot; contrato `/v1/chat` |
+| `main` | HISTORICAL (relativamente à integração Kernel) | Sem `kernelProvider` |
+| `feature/orbit-kernel-provider` | HISTORICAL / experimental | Evolução da integração |
+| `feature/orbit-kernel-tracing` | EXPERIMENTAL | Traces |
+| `refactor/wppconnect-to-baileys` | HISTORICAL | Migração transporte |
+| `refactor/test-trigger-mode` | EXPERIMENTAL | Testes |
+
+## Par KernelBot ↔ OrbitBot
+
+Mesmo nome `feature/kernel-orbit-v1-hardening` em ambos repos — evidência de desenvolvimento paralelo. **Merge para `main`:** UNKNOWN.
+
+## Implicação para agentes
+
+1. `git branch --show-current` em `/home/gaab/Documentos/gitHub/OrbitBot` antes de editar.
+2. Não assumir `kernelProvider` em `main`.
+3. Contrato Orbit→Kernel = `POST /v1/chat` **só na feature** (ver [[orbitbot-kernel]]).

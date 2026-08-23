@@ -1,11 +1,12 @@
 ---
+id: iss-roadmap
 tipo: roadmap
 status: atual
 atualizado: 2026-08-22
 relacionado:
   - "[[fonte-relatorio-analise]]"
   - "[[fonte-documentation-features]]"
-  - "[[branches]]"
+  - "[[iss-branches]]"
 ---
 
 # Roadmap

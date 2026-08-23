@@ -1,5 +1,7 @@
 # Índice da Wiki — Portifolio / ASCII Engine
 
+> **SUPERSEDED / AUXILIARY:** Esta cópia em `Portifolio/.ai/` é **histórica**. Fonte canónica CURRENT: [Portifolio/index.md](../index.md) e `Portifolio/wiki/portifolio-*.md`. Excluída do corpus `current` em `corpus.yaml`.
+
 ## Visão geral
 
 Este projeto começou como um portfólio orientado a um ambiente de sistema operacional (ROOT OS), mas o estado atual do código e da documentação indica uma transição para um produto focado em conversão de mídia em ASCII: a `ASCII Engine`.
@@ -14,14 +16,14 @@ Este projeto começou como um portfólio orientado a um ambiente de sistema oper
 
 ## Mapa da Wiki
 
-- [[current-state]] — resumo do que realmente existe hoje
-- [[architecture]] — arquitetura actual e principais módulos
-- [[ascii-engine-product]] — visão profunda do produto ASCII Engine, escopo, módulos e fluxo de valor
-- [[decisions]] — decisões arquiteturais e de produto relevantes
-- [[branches]] — análise das branches locais/remotas e do estado histórico
-- [[history]] — evolução do projeto em fases
-- [[roadmap]] — plano documentado e itens implementados vs abandonados
-- [[source-index]] — índice das fontes preservadas e da evidência de origem
+- [[portifolio-current-state]] — resumo do que realmente existe hoje
+- [[portifolio-architecture]] — arquitetura actual e principais módulos
+- [[portifolio-ascii-engine-product]] — visão profunda do produto ASCII Engine (link canónico; `.ai/wiki/` é SUPERSEDED)
+- [[portifolio-decisions]] — decisões arquiteturais e de produto relevantes
+- [[portifolio-branches]] — análise das branches locais/remotas e do estado histórico
+- [[portifolio-history]] — evolução do projeto em fases
+- [[portifolio-roadmap]] — plano documentado e itens implementados vs abandonados
+- [[portifolio-source-index]] — índice das fontes preservadas e da evidência de origem
 
 ## Fontes primárias preservadas
 

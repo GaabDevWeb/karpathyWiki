@@ -12,7 +12,7 @@ aliases:
   - Recuperação contextualizada
 fontes:
   - .ai/wiki/gaabwiki-terminology.md
-  - KernelBot/wiki/rag.md
+  - KernelBot/wiki/kernelbot-rag.md
   - KernelBot/index.md
   - README.md
   - .ai/CLAUDE.md
@@ -43,7 +43,7 @@ tags:
 - Gates de retrieval e grounding em `kernel/rag/retrieval.py`
 - Ingest via scripts e catálogo ISS
 - **Não** usa embeddings nem vector DB
-- Evidência: `KernelBot/wiki/rag.md`, `kernel/rag/search.py`, `requirements-prod.txt`
+- Evidência: `KernelBot/wiki/kernelbot-rag.md`, `kernel/rag/search.py`, `requirements-prod.txt`
 
 ### 2. RAG na GaabWiki (não implementado)
 
@@ -63,6 +63,6 @@ A meta-wiki GaabWiki preparou corpus, schema e metadata para futura indexação 
 
 ## Fontes
 
-- [KernelBot/wiki/rag.md](../../KernelBot/wiki/rag.md)
+- [KernelBot/wiki/kernelbot-rag.md](../../KernelBot/wiki/kernelbot-rag.md)
 - [corpus.yaml](../../corpus.yaml)
 - [.ai/CLAUDE.md](../CLAUDE.md)

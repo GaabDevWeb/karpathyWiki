@@ -18,6 +18,6 @@ Documentação técnica do **site** (JSON, URLs, exercícios, contribuição man
 
 ## Páginas derivadas
 
-- [[domain]]
-- [[conventions]]
-- [[architecture]]
+- [[iss-domain]]
+- [[iss-conventions]]
+- [[iss-architecture]]

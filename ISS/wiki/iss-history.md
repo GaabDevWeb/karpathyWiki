@@ -1,10 +1,11 @@
 ---
+id: iss-history
 tipo: historia
 status: atual
 atualizado: 2026-08-22
 relacionado:
-  - "[[branches]]"
-  - "[[decisions]]"
+  - "[[iss-branches]]"
+  - "[[iss-decisions]]"
   - "[[fonte-relatorio-analise]]"
 ---
 

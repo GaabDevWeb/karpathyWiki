@@ -40,24 +40,24 @@ tags:
 
 ## Entrada
 
-- [[current-state]] — o que realmente existe hoje
-- [[architecture]] — backend FastAPI + frontend estático + adaptadores LLM
-- [[domain]] — noção de "spec engineering" e dimensão de avaliação
+- [[xray-spec-current-state]] — o que realmente existe hoje
+- [[xray-spec-architecture]] — backend FastAPI + frontend estático + adaptadores LLM
+- [[xray-spec-domain]] — noção de "spec engineering" e dimensão de avaliação
 
 ## Decisões e convenções
 
-- [[decisions]] — decisões técnicas relevantes e status
-- [[conventions]] — padrões observados no código, .env e API
+- [[xray-spec-decisions]] — decisões técnicas relevantes e status
+- [[xray-spec-conventions]] — padrões observados no código, .env e API
 
 ## História e branches
 
-- [[history]] — evolução observada no Git
-- [[branches]] — análise das branches disponíveis
+- [[xray-spec-history]] — evolução observada no Git
+- [[xray-spec-branches]] — análise das branches disponíveis
 
 ## Problemas e planeamento
 
-- [[known-issues]] — contradições, lacunas e riscos conhecidos
-- [[roadmap]] — só itens com evidência real (se existirem)
+- [[xray-spec-known-issues]] — contradições, lacunas e riscos conhecidos
+- [[xray-spec-roadmap]] — só itens com evidência real (se existirem)
 
 ## Fontes
 

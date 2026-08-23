@@ -2,39 +2,76 @@
 id: orbitbot-kernel
 tipo: arquitetura
 status: atual
+projeto: orbitbot
+dominio: architecture
+escopo: projeto
 atualizado: 2026-08-23
+confianca: alta
+fontes:
+  - /home/gaab/Documentos/gitHub/OrbitBot/src/openai.js
+  - /home/gaab/Documentos/gitHub/OrbitBot/src/providers/kernelProvider.js
+relacionados:
+  - orbitbot-branches
+  - orbitbot-kernelbot
+  - orbitbot-architecture
+tags:
+  - kernel
+  - orbit
+  - branch-provenance
 ---
 
-# Kernel
+# Kernel (conceito) — vista OrbitBot
 
-## Papel conceitual
+> **Kernel** = camada cognitiva (no repo **KernelBot**, pacote `kernel/`). **OrbitBot não implementa Kernel** — delega via HTTP.
 
-O Kernel é a camada de processamento de contexto, recolha, decisão e grounding. O projeto KernelBot confirma esta leitura: FastAPI, BM25, MySQL, RAG, context router e observabilidade estão concentrados no backend.
+## Kernel ≠ KernelBot ≠ OrbitBot
 
-## Funções observadas
+| Entidade | O que é |
+|----------|---------|
+| Kernel | Conceito / processamento (RAG, LLM, transcript SSOT na feature) |
+| KernelBot | Repositório Python que hospeda `kernel/` |
+| OrbitBot | Adapter WhatsApp Node; **canal**, não cognição |
 
-- API HTTP de chat: `POST /chat`
-- API de busca: `POST /search`
-- contexto institucional, temporal e calendário
-- grounding / RAG / BM25
-- integração com memória e transcript
-- observabilidade por traces
+## Contrato Orbit → Kernel (feature branch)
 
-## Como se relaciona com Orbit
+**Classificação:** IMPLEMENTED / BRANCH-SPECIFIC  
+**Branch OrbitBot + KernelBot:** `feature/kernel-orbit-v1-hardening`
 
-O contrato documentado define que OrbitBot envia a pergunta para o Kernel e recebe uma resposta estruturada. A documentação do repositório OrbitBot chama a este fluxo de “Orbit → Kernel (ChannelContext)”.
+```text
+OrbitBot
+  → src/openai.js
+  → kernelProvider.chat()
+  → POST {KERNEL_API_URL}/v1/chat
+  → KernelBot (api/routes_v1.py)
+  → resposta JSON { answer }
+```
 
-## Estado atual
+Evidência: `src/openai.js` require `kernelProvider`; comentário confirma cache OpenRouter **não** usado no caminho Kernel.
 
-- Confirmado: existe um backend Kernel separado em outro repositório.
-- Confirmado: há integração explícita e branches compartilhadas (`feature/kernel-orbit-*`).
-- Confirmado: Kernel está associado a context routing e conhecimento recuperável.
-- Não confirmado: se o termo “Kernel” representa um produto único, um framework ou uma convenção de arquitetura mais ampla.
+## Endpoints KernelBot
+
+| Endpoint | Classificação | Uso OrbitBot |
+|----------|---------------|--------------|
+| **`POST /v1/chat`** | **Contrato Orbit (feature)** | **Principal** — `kernelProvider.js` |
+| `POST /chat` | LEGACY | API legada; **não** é o fluxo Orbit na feature auditada |
+| `POST /search` | LEGACY / direct | Busca BM25; OrbitBot **não** usa como contrato de chat |
+
+## Em `OrbitBot/main` (HISTORICAL)
+
+- **Sem** `src/providers/kernelProvider.js`
+- Fluxo via OpenRouter + cache local (`src/openai.js` legado)
+- Ver [[orbitbot-branches]]
+
+## Estado
+
+- Backend Kernel separado (repo KernelBot): **confirmado**
+- Integração HTTP na feature: **confirmada**
+- Merge para `main`: **UNKNOWN**
+- Kernel como "produto" vs "convenção": conceito arquitectural — ver [[gaabwiki-kernel]]
 
 ## Relações
 
-- [[orbitbot-kernelbot]]
-- [[orbitbot-identity]]
-- [[orbitbot-rag]]
-- [[orbitbot-memory]]
-- [[orbitbot-ecosystem]]
+- [[orbitbot-kernelbot]] — repo do backend
+- [[orbitbot-identity]] — este projecto (OrbitBot)
+- [[orbitbot-rag]] — OrbitBot **não** faz RAG
+- [[orbitbot-memory]] — SQLite local; transcript SSOT no Kernel (feature)

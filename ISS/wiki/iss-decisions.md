@@ -1,11 +1,12 @@
 ---
+id: iss-decisions
 tipo: decisao
 status: atual
 atualizado: 2026-08-22
 relacionado:
-  - "[[architecture]]"
-  - "[[integrations]]"
-  - "[[branches]]"
+  - "[[iss-architecture]]"
+  - "[[iss-integrations]]"
+  - "[[iss-branches]]"
 ---
 
 # Decisões
@@ -124,7 +125,7 @@ Determinismo: `discipline` vem da config, não do modelo.
 
 ## Status
 
-Atual (substitui / diverge da abordagem YAML das branches Cursor — ver [[branches]])
+Atual (substitui / diverge da abordagem YAML das branches Cursor — ver [[iss-branches]])
 
 ---
 
@@ -213,7 +214,7 @@ Rebranding do título para “ISS — Infet Students Summary”.
 
 ## Nota
 
-“Infet” vs “Infnet”; agente ainda diz “Interactive Study System”. Status de naming: ver [[known-issues]].
+“Infet” vs “Infnet”; agente ainda diz “Interactive Study System”. Status de naming: ver [[iss-known-issues]].
 
 ## Status
 

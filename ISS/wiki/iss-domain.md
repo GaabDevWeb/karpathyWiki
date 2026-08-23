@@ -1,4 +1,5 @@
 ---
+id: iss-domain
 tipo: dominio
 status: atual
 atualizado: 2026-08-22
@@ -6,8 +7,8 @@ fonte:
   - "[[fonte-documentation]]"
   - "[[fonte-readme]]"
 relacionado:
-  - "[[current-state]]"
-  - "[[conventions]]"
+  - "[[iss-current-state]]"
+  - "[[iss-conventions]]"
 ---
 
 # Domínio
@@ -17,7 +18,7 @@ Conhecimento de domínio do ISS: estudo académico INFNET, conteúdo versionado,
 ## Produto
 
 - **Nome de marca no UI/README:** “ISS — Infet Students Summary”
-- **Expandido no agente de ensino:** “Interactive Study System” (`agents/content-summary-agent.md`) — ver [[known-issues]]
+- **Expandido no agente de ensino:** “Interactive Study System” (`agents/content-summary-agent.md`) — ver [[iss-known-issues]]
 - **Instituição referida:** Infnet / INFNET (portal `infnet.online` no ecossistema do scraper)
 - **Slogan (README):** “Teoria que vira código. Revisão que vira domínio.”
 

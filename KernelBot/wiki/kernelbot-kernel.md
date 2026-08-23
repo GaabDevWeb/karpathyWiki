@@ -1,44 +1,71 @@
 ---
 id: kernelbot-kernel
-tipo: kernel
+tipo: conceito
 status: atual
+projeto: kernelbot
+dominio: architecture
+escopo: projeto
 atualizado: 2026-08-23
-fonte:
-	- "raw/docs-wiki/02-arquitetura.md"
-	- "raw/README.md"
+confianca: alta
+fontes:
+  - /home/gaab/Documentos/gitHub/KernelBot/kernel/
+  - KernelBot/wiki/kernelbot-branches.md
+  - raw/docs-wiki/02-arquitetura.md
+relacionados:
+  - kernelbot-identity
+  - kernelbot-architecture
+  - kernelbot-branches
+tags:
+  - kernel
+  - concept
+  - branch-provenance
 ---
 
-# Kernel — Núcleo do ecossistema
+# Kernel (conceito) vs KernelBot (projeto)
 
-Resumo executivo:
+## Kernel ≠ KernelBot
 
-O `Kernel` (nome operacional do projeto também referido como `KernelBot`) é o núcleo Python/FastAPI que fornece:
+| | **Kernel** | **KernelBot** |
+|---|------------|---------------|
+| Natureza | Conceito / camada arquitectural | Repositório / projecto |
+| Onde vive | Namespace `kernel/` **dentro** do repo KernelBot (feature branch) | `/home/gaab/Documentos/gitHub/KernelBot` |
+| Papel | Cognição: RAG, grounding, LLM, transcript | Hospeda código, deploy, API HTTP, adapters |
 
-- Orquestração de chat e montagem de contexto (`kernel/orchestrator`)
-- RAG léxico baseado em BM25 (`kernel/rag/search.py`, `kernel/rag/retrieval.py`)
-- Armazenamento de conhecimento indexado em MySQL (`kernel/knowledge`, tabela `knowledge`)
-- Memory / transcript in-process (`kernel/memory`)
-- Providers LLM configuráveis (Cursor SDK / OpenRouter em `kernel/providers`)
-- Políticas de grounding e post-generation (`kernel/policies`)
-- Ferramentas operacionais (`kernel/tools`) e trace emit (`kernel/trace`)
+**Proibido confundir:** KernelBot **não** é sinónimo de Kernel. KernelBot **implementa** o Kernel.
 
-Evidências:
+## Implementação do Kernel (BRANCH-SPECIFIC)
 
-- `docs/ARCHITECTURE.md` / `raw/docs-wiki/02-arquitetura.md` descreve os módulos e fronteiras (Kernel vs Adapters).
-- Código-fonte: pasta `kernel/` contém `orchestrator`, `rag`, `memory`, `knowledge`, `providers`.
-- `README.md` descreve stack (FastAPI, BM25, MySQL) e scripts de deploy/ingest.
+**Repo:** KernelBot  
+**Branch:** `feature/kernel-orbit-v1-hardening`  
+**Classificação:** IMPLEMENTED — **não** assumir em `main`
 
-Status arquitetural:
+Módulos sob `kernel/` (evidência HEAD 2026-08-23):
 
-- Implementado como monólito Python/FastAPI; componentes desenhados para serem reutilizáveis internamente.
-- `Kernel` é a "fonte de verdade" para RAG, políticas e decisões de grounding — a wiki assume código > docs em caso de conflito.
+- `kernel/orchestrator` — montagem de contexto
+- `kernel/rag/search.py`, `kernel/rag/retrieval.py` — BM25 + gates
+- `kernel/knowledge/` — MySQL `knowledge`
+- `kernel/memory/` — transcript, pin, group (in-process / SQLite parcial)
+- `kernel/providers/` — OpenRouter / Cursor SDK
+- `kernel/policies/`, `kernel/trace/`, `kernel/tools/`
 
-Relação com Orbit (resumo):
+## O que NÃO é Kernel (fronteiras)
 
-- Orbit opera como adapters/clients fora do Kernel; o Kernel expõe endpoints HTTP versionados (`/v1/chat`) para integração (veja `docs/prd/2026-07-28-kernel-orbit-integration.md`).
+- **OrbitBot** — canal WhatsApp; chama o Kernel via HTTP.
+- **GaabWiki** — memória documental; sem runtime.
+- **`adapters/`** na raiz do repo — outbound WhatsApp/Discord; **não** está sob `kernel/adapters/` (path `kernel/adapters/` **não existe**).
 
-Referências (fontes preservadas):
+## Em `main` (HISTORICAL / legado)
 
-- `raw/README.md`
-- `raw/docs-wiki/02-arquitetura.md`
-- código: `kernel/` (orchestrator, rag, memory, providers)
+- Domínio cognitivo legado em `engine/` + UI em `frontend/`.
+- **Sem** pacote `kernel/` nem contrato `/v1/chat`.
+- Ver [[kernelbot-branches]].
+
+## Relação com Orbit
+
+Orbit (OrbitBot) delega geração via `POST /v1/chat` na feature branch. Kernel expõe HTTP; Orbit não importa código Python.
+
+## Fontes
+
+- Código: `kernel/` (feature branch)
+- Proveniência: [[kernelbot-branches]]
+- Histórico: `raw/docs-wiki/` (cita `engine/` — imutável)

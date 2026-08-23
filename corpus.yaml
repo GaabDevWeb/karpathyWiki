@@ -33,6 +33,8 @@ exclude:
   - "**/*.log"
   - "**/*.cache"
   - "**/.DS_Store"
+  - "Portifolio/.ai/wiki/**"
+  - "KernelBot/raw/docs-wiki/**"
 
 invariants:
   - "Cada página importante deve possuir id único"

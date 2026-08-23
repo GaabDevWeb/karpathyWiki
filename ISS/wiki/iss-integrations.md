@@ -1,11 +1,12 @@
 ---
+id: iss-integrations
 tipo: integracao
 status: atual
 atualizado: 2026-08-22
 relacionado:
-  - "[[architecture]]"
-  - "[[branches]]"
-  - "[[decisions]]"
+  - "[[iss-architecture]]"
+  - "[[iss-branches]]"
+  - "[[iss-decisions]]"
 ---
 
 # Integrações

@@ -1,4 +1,5 @@
 ---
+id: portifolio-architecture
 tipo: arquitetura
 status: atual
 atualizado: 2026-08-23

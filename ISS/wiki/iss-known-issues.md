@@ -1,10 +1,11 @@
 ---
+id: iss-known-issues
 tipo: problema
 status: atual
 atualizado: 2026-08-22
 relacionado:
-  - "[[current-state]]"
-  - "[[branches]]"
+  - "[[iss-current-state]]"
+  - "[[iss-branches]]"
   - "[[fonte-readme]]"
 ---
 

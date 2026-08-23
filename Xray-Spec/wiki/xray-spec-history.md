@@ -1,4 +1,5 @@
 ---
+id: xray-spec-history
 tipo: historia
 status: atual
 atualizado: 2026-08-23

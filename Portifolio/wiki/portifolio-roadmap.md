@@ -1,4 +1,5 @@
 ---
+id: portifolio-roadmap
 tipo: planejamento
 status: atual
 atualizado: 2026-08-23

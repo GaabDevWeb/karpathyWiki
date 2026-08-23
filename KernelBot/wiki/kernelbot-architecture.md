@@ -2,16 +2,29 @@
 id: kernelbot-architecture
 tipo: arquitetura
 status: atual
+projeto: kernelbot
+dominio: architecture
+escopo: projeto
 atualizado: 2026-08-23
-fonte:
-  - "/home/gaab/Documentos/gitHub/KernelBot/app/factory.py"
-  - "/home/gaab/Documentos/gitHub/KernelBot/api/routes_v1.py"
-  - "raw/README.md"
+confianca: alta
+fontes:
+  - /home/gaab/Documentos/gitHub/KernelBot/app/factory.py
+  - /home/gaab/Documentos/gitHub/KernelBot/api/routes_v1.py
+  - /home/gaab/Documentos/gitHub/KernelBot/adapters/whatsapp/outbound.py
+relacionados:
+  - kernelbot-branches
+  - kernelbot-current-state
+tags:
+  - architecture
+  - branch-provenance
 ---
 
 # Arquitetura do KernelBot
 
-Branch: `feature/kernel-orbit-v1-hardening`. Pacote legado `engine/` migrado para `kernel/`. `raw/docs-wiki/` ainda cita `engine/` (histórico).
+**Branch auditada:** `feature/kernel-orbit-v1-hardening` (BRANCH-SPECIFIC).  
+**`main`:** arquitectura diferente (`engine/` + `frontend/`) — ver [[kernelbot-branches]].
+
+Pacote legado `engine/` → `kernel/` na feature. `raw/docs-wiki/` ainda cita `engine/` (HISTORICAL).
 
 ```text
 OrbitBot / cliente HTTP
@@ -32,12 +45,14 @@ UI interna (não é o chat público):
 /traces/*  flight recorder (api/traces_routes.py)
 ```
 
-Outbound:
+Outbound (path **real** verificado no repo):
 
 ```text
-kernel/adapters/whatsapp/outbound.py -> ORBIT_INTERNAL_URL :8010
+adapters/whatsapp/outbound.py -> ORBIT_INTERNAL_URL default http://127.0.0.1:8010
 adapters/discord/outbound.py -> stub discord_not_implemented
 ```
+
+**Nota:** `kernel/adapters/` **não existe** no filesystem.
 
 ## Módulos
 

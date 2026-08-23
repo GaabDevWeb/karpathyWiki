@@ -1,4 +1,5 @@
 ---
+id: xray-spec-architecture
 tipo: arquitetura
 status: atual
 atualizado: 2026-08-23

@@ -31,7 +31,7 @@ tags:
 
 | Campo | Valor |
 |-------|--------|
-| Nome | ISS — Infet Students Summary *(marca no README; ver [[known-issues]])* |
+| Nome | ISS — Infet Students Summary *(marca no README; ver [[iss-known-issues]])* |
 | Propósito | Plataforma estática de estudo (aulas Markdown + exercícios + progresso local) + pipeline VTT→lições |
 | Repo origem | `https://github.com/GaabDevWeb/ISS` (local: `/home/gaab/Documentos/gitHub/ISS`) |
 | Site | `https://gaabdevweb.github.io/ISS/` |
@@ -40,28 +40,28 @@ tags:
 
 ## Entrada
 
-- [[current-state]] — o que realmente existe hoje
-- [[architecture]] — site estático + pipeline GHA + ecossistema
-- [[domain]] — disciplinas, catálogo, modelo de conteúdo
+- [[iss-current-state]] — o que realmente existe hoje
+- [[iss-architecture]] — site estático + pipeline GHA + ecossistema
+- [[iss-domain]] — disciplinas, catálogo, modelo de conteúdo
 
 ## Decisões e convenções
 
-- [[decisions]] — decisões técnicas relevantes (e status)
-- [[conventions]] — padrões observados no código e configs
+- [[iss-decisions]] — decisões técnicas relevantes (e status)
+- [[iss-conventions]] — padrões observados no código e configs
 
 ## História e branches
 
-- [[history]] — fases da evolução
-- [[branches]] — `main`, `features`, branches Cursor
+- [[iss-history]] — fases da evolução
+- [[iss-branches]] — `main`, `features`, branches Cursor
 
 ## Problemas e planeamento
 
-- [[known-issues]] — contradições, lacunas, dívidas
-- [[roadmap]] — só itens com evidência (não inventar backlog)
+- [[iss-known-issues]] — contradições, lacunas, dívidas
+- [[iss-roadmap]] — só itens com evidência (não inventar backlog)
 
 ## Integrações
 
-- [[integrations]] — StripperScrapper, Cursor SDK, Discord, KernelBot (branch `features`)
+- [[iss-integrations]] — StripperScrapper, Cursor SDK, Discord, KernelBot (branch `features`)
 
 ## Fontes
 

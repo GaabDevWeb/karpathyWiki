@@ -1,4 +1,5 @@
 ---
+id: xray-spec-roadmap
 tipo: roadmap
 status: atual
 atualizado: 2026-08-23

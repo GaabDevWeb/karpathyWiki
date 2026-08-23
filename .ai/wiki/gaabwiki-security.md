@@ -41,7 +41,10 @@ Três planos distintos. A wiki **não** promete protecção que o código não i
 
 ## 2. KernelBot (código)
 
-**IMPLEMENTADO:**
+**Classificação:** IMPLEMENTED / **BRANCH-SPECIFIC** — `feature/kernel-orbit-v1-hardening`  
+**Em `main`:** `api/security.py` e ACL v1 **ausentes** (evidência Git 2026-08-23).
+
+**IMPLEMENTADO (na feature branch):**
 
 - Bearer de canal (`ACL_API_BEARER_TOKEN` / `ACL_CHANNEL_API_KEYS`) e Bearer interno (`ACL_INTERNAL_BEARER_TOKEN`).
 - Rate limit: `/chat` 30/min, `/search` 20/min, `/internal` 60/min (valores observados na auditoria de código).
@@ -59,7 +62,10 @@ Três planos distintos. A wiki **não** promete protecção que o código não i
 
 ## 3. OrbitBot (código)
 
-**IMPLEMENTADO:**
+**Classificação:** IMPLEMENTED / **BRANCH-SPECIFIC** — `feature/kernel-orbit-v1-hardening` (integração Kernel).  
+**Em `OrbitBot/main`:** sem `kernelProvider`; ACL local diferente.
+
+**IMPLEMENTADO (feature auditada):**
 
 - Whitelist `ADMIN_NUMBERS` para comandos `/`.
 - HTTP interno bind `127.0.0.1`, Bearer timing-safe; `/internal/health` **sem** auth.

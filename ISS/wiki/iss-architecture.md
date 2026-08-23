@@ -1,4 +1,5 @@
 ---
+id: iss-architecture
 tipo: arquitetura
 status: atual
 atualizado: 2026-08-22
@@ -6,9 +7,9 @@ fonte:
   - "[[fonte-readme]]"
   - "[[fonte-documentation]]"
 relacionado:
-  - "[[current-state]]"
-  - "[[integrations]]"
-  - "[[decisions]]"
+  - "[[iss-current-state]]"
+  - "[[iss-integrations]]"
+  - "[[iss-decisions]]"
 ---
 
 # Arquitectura
@@ -81,7 +82,7 @@ Prompts: `agents/content-summary-*.md`. Validação de saída rejeita meta-texto
 ## Configuração de mapeamento
 
 - **IMPLEMENTADO em `main`:** `config/vtt-to-content.json` — pasta em `downloads/` → `discipline` + `content_dir`
-- **Histórico / Cursor branches:** `agents/discipline-map.yaml` — ver [[branches]]; **não** está em `main`
+- **Histórico / Cursor branches:** `agents/discipline-map.yaml` — ver [[iss-branches]]; **não** está em `main`
 - Contexto de PDFs: `config/documents-context.json` (`per_lesson` vs `discipline_all`, ranges, filename patterns)
 
 ## O que não é arquitectura do site
@@ -90,4 +91,4 @@ Prompts: `agents/content-summary-*.md`. Validação de saída rejeita meta-texto
 - API HTTP própria — ausente
 - Base de dados do site — ausente (progresso só local)
 
-Integração MySQL/KernelBot: [[integrations]], branch `features`.
+Integração MySQL/KernelBot: [[iss-integrations]], branch `features`.

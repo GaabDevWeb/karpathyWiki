@@ -1,41 +1,56 @@
 ---
 id: kernelbot-identity
-tipo: project
+tipo: projeto
 status: atual
+projeto: kernelbot
+dominio: identity
+escopo: projeto
 atualizado: 2026-08-23
-fonte:
-	- "raw/README.md"
-	- "raw/docs-wiki/KernelBot.md"
+confianca: alta
+fontes:
+  - raw/README.md
+  - KernelBot/wiki/kernelbot-branches.md
+relacionados:
+  - kernelbot-kernel
+  - kernelbot-current-state
+tags:
+  - kernelbot
+  - identity
 ---
 
-# KernelBot — O projecto (nome histórico e identidade)
+# KernelBot — o projecto (repositório)
 
-O que é
+## KernelBot ≠ Kernel
 
-KernelBot é a instância operacional do `Kernel` — um backend Python/FastAPI que oferece chat RAG orientado a conteúdo educacional indexado (aulas). Historicamente também referido como "Kernel" e sujeito a movimentos de renome e refactor (ver branches e PRD).
+| | KernelBot | Kernel |
+|---|-----------|--------|
+| Tipo | Repositório / projecto | Conceito / camada arquitectural |
+| Path | `/home/gaab/Documentos/gitHub/KernelBot` | Namespace `kernel/` **dentro** do KernelBot (feature branch) |
 
-Propósito
+KernelBot **implementa** o Kernel. Não são nomes intercambiáveis. Ver [[kernelbot-kernel]].
 
-- Fornecer um serviço HTTP canónico para chat e search sobre conteúdos educacionais.
-- Ancorar respostas em evidência (BM25 → chunks → grounding) para reduzir alucinação.
-- Servir como backend consumível por adapters (Orbit, Discord, CLI).
+## Propósito
 
-O que implementa hoje (evidência)
+- Serviço HTTP para chat e search sobre conteúdo educacional indexado.
+- BM25 → chunks → grounding → LLM.
+- Backend consumível por adapters (OrbitBot, Discord stub, CLI).
 
-- Endpoints HTTP verificados: `POST /chat` (legado), `POST /search`, `GET /v1/health`, `POST /v1/chat` (contrato Orbit), endpoints de grupo em `api/routes_v1.py`.
-- RAG: BM25 + MySQL (`kernel/rag/search.py`, `kernel/knowledge/database.py`).
-- Ingest pipeline: `./bin/ingest-jsons.sh`, sincronização com catálogo ISS e rebuild BM25.
-- Providers LLM configuráveis: Cursor SDK ou OpenRouter.
-- Rate limiting e ACL para operações sensíveis (`/reload`, `/health/catalog`).
+## Branch auditada
 
-Reutilização e componentes potencialmente reaproveitáveis
+`feature/kernel-orbit-v1-hardening` (2026-08-23). **`main`** tem arquitectura legada — [[kernelbot-branches]].
 
-- `kernel/orchestrator` (montagem de mensagens) — utilidade alta para outros projetos
-- `kernel/rag` (BM25) — pode ser isolado como serviço de retrieval léxico
-- `kernel/providers` (abstração de LLM) — adaptador pluggable para diferentes SDKs
+## O que implementa (feature branch)
 
-Fontes
+- `POST /v1/chat`, `GET /v1/health` — contrato Orbit
+- `POST /chat`, `POST /search` — legado
+- RAG BM25 em `kernel/rag/`
+- Ops `/ops/*`, Traces `/traces/*`
+
+## Naming histórico (HISTORICAL)
+
+README e docs antigos usam "Kernel API" como branding do produto — isso refere-se ao **conceito** servido pelo **repo** KernelBot, não prova que Kernel = KernelBot como entidades.
+
+## Fontes
 
 - `raw/README.md`
-- `raw/docs-wiki/02-arquitetura.md`
-- `memory/kb-trimestre3/REPORT.md`
+- [[kernelbot-branches]]

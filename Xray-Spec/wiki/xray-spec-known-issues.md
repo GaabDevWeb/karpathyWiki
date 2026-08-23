@@ -1,4 +1,5 @@
 ---
+id: xray-spec-known-issues
 tipo: problema
 status: atual
 atualizado: 2026-08-23

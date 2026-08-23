@@ -18,10 +18,10 @@ Snapshot da documentação na tip `features` (`b432a6f`, 2026-05-22). Inclui sec
 
 ## Páginas derivadas
 
-- [[integrations]]
-- [[branches]]
-- [[roadmap]]
-- [[decisions]]
+- [[iss-integrations]]
+- [[iss-branches]]
+- [[iss-roadmap]]
+- [[iss-decisions]]
 
 ## Nota
 

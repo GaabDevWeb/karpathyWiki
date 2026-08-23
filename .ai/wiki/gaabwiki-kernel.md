@@ -12,9 +12,9 @@ aliases:
   - Camada cognitiva
   - Kernel API
 fontes:
-  - /home/gaab/Documentos/gitHub/KernelBot/kernel/
-  - /home/gaab/Documentos/gitHub/KernelBot/README.md
-  - KernelBot/index.md
+  - /home/gaab/Documentos/gitHub/KernelBot
+  - KernelBot/wiki/kernelbot-branches.md
+  - KernelBot/wiki/kernelbot-kernel.md
 relacionados:
   - gaabwiki-kernelbot
   - gaabwiki-orbit
@@ -25,30 +25,60 @@ tags:
   - gaabwiki-kernel
   - architecture
   - context
+  - branch-provenance
 ---
 
 # Kernel
 
-> O Kernel é o **conceito** da camada cognitiva. A implementação CURRENT vive no repo KernelBot, pasta `kernel/`. Não existe repo `/home/gaab/Documentos/gitHub/Kernel`.
+> **Kernel** = conceito/camada arquitectural de cognição (contexto, RAG, grounding, LLM). **Kernel ≠ KernelBot.** KernelBot é o repositório que **implementa** essa camada. Não existe repo `/home/gaab/Documentos/gitHub/Kernel`.
 
-## Definição
+## Proveniência (leia primeiro)
 
-No código, `kernel/` agrupa: orchestrator, rag, memory, knowledge, context, providers, policies, trace, comms, users, schemas, disciplines, inspect, tools.
+| Classificação | Repo | Branch | O que significa |
+|---------------|------|--------|-----------------|
+| **IMPLEMENTED / BRANCH-SPECIFIC** | KernelBot | `feature/kernel-orbit-v1-hardening` | Pacote `kernel/`, `/v1/chat`, True Kernel HTTP |
+| **CURRENT-de-`main`** | KernelBot | `main` | Monólito `engine/` + `frontend/`; **sem** `kernel/` |
+| **TARGET** | KernelBot | merge feature → `main` | **UNKNOWN** — não confirmado |
+| **HISTORICAL** | KernelBot | `raw/docs-wiki/` | Documentação legada que cita `engine/` |
 
-O README do KernelBot chama o produto de **"Kernel API"**: HTTP reutilizável para busca BM25 e conversa RAG sobre aulas indexadas.
+Evidência Git (2026-08-23): `git cat-file -e main:kernel/rag/search.py` → ausente; HEAD da feature → presente.
 
-## Estado atual (CURRENT)
+## Definição (conceito)
 
-- Implementado como biblioteca de domínio **dentro** de KernelBot.
-- Entrypoint HTTP: FastAPI em `main.py` + `app/factory.py`, porta **8001**.
-- Pastas `engine/` e `core/` no repo estão **vazias** (código migrado; leftovers em testes/docs).
-- Branding histórico "ACL — Agente de Contexto Local" sobrevive em `KernelBot.wiki` e variáveis `ACL_*`.
+O Kernel agrupa responsabilidades cognitivas: orchestrator, RAG, memory, knowledge, providers, policies, trace. No código **da feature branch**, vivem sob `kernel/` dentro do repo KernelBot.
+
+## O que existe em `KernelBot/main`
+
+**Classificação:** CURRENT-de-`main` / HISTORICAL relativamente ao True Kernel documentado na wiki meta.
+
+| Artefacto | Em `main`? |
+|-----------|------------|
+| Pacote `kernel/` | **Não** |
+| `api/routes_v1.py`, `POST /v1/chat` | **Não** |
+| Pacote `engine/` | **Sim** (~13 paths) |
+| `frontend/` (UI web pública) | **Sim** |
+| BM25 via `kernel/rag/` | **Não** (legado sob `engine/`) |
+
+## O que existe em `KernelBot/feature/kernel-orbit-v1-hardening`
+
+**Classificação:** IMPLEMENTED / BRANCH-SPECIFIC (workspace auditado 2026-08-23).
+
+| Artefacto | Na feature? |
+|-----------|-------------|
+| Pacote `kernel/` | **Sim** |
+| `POST /v1/chat` | **Sim** (`api/routes_v1.py`) |
+| `engine/` | **Não** (substituído) |
+| `frontend/` | **Não** (ausente no HEAD) |
+| `adapters/whatsapp/outbound.py` | **Sim** (path real: `adapters/`, não `kernel/adapters/`) |
+
+Pastas `engine/` e `core/` **vazias no HEAD da feature** — afirmação **falsa** em `main`, onde `engine/` está populado.
 
 ## Relação com Orbit
 
-Orbit (conceito / OrbitBot) é o canal. Kernel processa. Comunicação: HTTP `POST /v1/chat`, não import de código partilhado.
+Orbit (conceito; OrbitBot = implementação) é o **canal**. Kernel **processa**. Contrato Orbit→Kernel na feature: `POST /v1/chat` (HTTP). **Não** existe em `main` de OrbitBot (`kernelProvider.js` ausente).
 
 ## Relação com projectos
 
-- [[gaabwiki-kernelbot]]: o repositório que contém `kernel/`.
-- [[gaabwiki-orbitbot]]: o único adapter WhatsApp verificado que consome a API.
+- [[gaabwiki-kernelbot]]: repositório que hospeda a implementação.
+- [[gaabwiki-orbitbot]]: adapter WhatsApp que consome `/v1/chat` na feature branch.
+- [[kernelbot-branches]]: tabela completa main vs feature.

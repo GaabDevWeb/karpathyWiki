@@ -14,9 +14,9 @@ Padronização da meta-wiki para preparação futura de retrieval: IDs estáveis
 
 Hardening final da GaabWiki V1: reforço da precedência da verdade, separação entre estado e evento, políticas de manutenção e entrada, criação de páginas de entidades canônicas, health check e known unknowns; base documental estabilizada para futuro retrieval sem implementar qualquer camada técnica de indexação.
 
-## [2026-08-23] blocker-remediation | gaabwiki-v1
+## [2026-08-23] adversarial-remediation | gaabwiki-v1
 
-Remediação dos blockers do gate independente: `kernelbot-branches.md` reescrito (main vs feature); convenção wikilink `{escopo}-{conceito}` em schema §12; renomeação de páginas meta/sub-wikis; remoção de "Freeze V1 aceite" do conteúdo factual; Git local inicializado. Freeze V1 **não** declarado — pendente novo gate.
+Correcção H1–H5 + M1–M4 do gate adversarial: branch provenance em gaabwiki-kernel/ecosystem; Kernel≠KernelBot; path outbound; orbitbot-kernel/branches; links kernelbot-rag; prefixos iss/portifolio/xray-spec; Portifolio/.ai/wiki excluído do corpus current. Freeze **não** declarado.
 
 ## [2026-08-23] lint+update | forensic-pass-3
 

@@ -1,4 +1,5 @@
 ---
+id: iss-current-state
 tipo: estado
 status: atual
 atualizado: 2026-08-22
@@ -6,9 +7,9 @@ fonte:
   - "[[fonte-readme]]"
   - "[[fonte-documentation]]"
 relacionado:
-  - "[[architecture]]"
-  - "[[domain]]"
-  - "[[known-issues]]"
+  - "[[iss-architecture]]"
+  - "[[iss-domain]]"
+  - "[[iss-known-issues]]"
 ---
 
 # Estado actual
@@ -67,11 +68,11 @@ Fonte: README.md, `documentation.md`, `index.html`.
 
 - Workflow `summarize-transcripts.yml`: cron diário 09:30 America/Sao_Paulo + `workflow_dispatch`
 - Conversão Office→PDF; geração via Cursor Agent; publicação; export `jsons/`; Discord opcional
-- Mapeamento canónico: `config/vtt-to-content.json` (não `discipline-map.yaml` — ver [[known-issues]])
+- Mapeamento canónico: `config/vtt-to-content.json` (não `discipline-map.yaml` — ver [[iss-known-issues]])
 
 ## Sync KernelBot / MySQL (EXPERIMENTAL — só `features`)
 
-Scripts e workflow `sync-kernelbot-knowledge.yml` **existem na branch `features`**, não no workflow tree de `main`. Em `main` há artefactos `.github/reports/*.json` sem o workflow correspondente — ver [[branches]] e [[known-issues]].
+Scripts e workflow `sync-kernelbot-knowledge.yml` **existem na branch `features`**, não no workflow tree de `main`. Em `main` há artefactos `.github/reports/*.json` sem o workflow correspondente — ver [[iss-branches]] e [[iss-known-issues]].
 
 ## Testes automatizados
 
